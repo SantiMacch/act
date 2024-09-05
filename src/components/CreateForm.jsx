@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { postcontacts } from '../services/Contactos'
 const CreateForm = ({setActTabla}) => {
-    const [formData, setFormData] = useState()
+    const [formData, setFormData] = useState({name: '', lastname: '', age: '',number: ''})
 
     // const postcontacts = () => {
     //     axios.post('http://localhost:3000/contactos', formData)
@@ -42,7 +42,7 @@ const CreateForm = ({setActTabla}) => {
         //comprobacion de telefono debe tener si o si los primero tres numeros de area un guion y el numero de telefono
 
         postcontacts(setActTabla, formData)
-        setFormData({})
+        setFormData({name: '', lastname: '', age: '',number: ''})
       }
   
 
@@ -56,7 +56,7 @@ const CreateForm = ({setActTabla}) => {
                         <input
                             name="name"
                             placeholder="Nombre"
-                            value={formData?.name}
+                            value={formData.name}
                             onChange={handleInputChange}
                         />
                     </label>
@@ -65,7 +65,7 @@ const CreateForm = ({setActTabla}) => {
                         <input
                             name="lastname"
                             placeholder="Apellido"
-                            value={formData?.lastname}
+                            value={formData.lastname}
                             onChange={handleInputChange}
                         />
                     </label>
@@ -77,7 +77,7 @@ const CreateForm = ({setActTabla}) => {
                             type="number"
                             name="age"
                             placeholder="Edad"
-                            value={formData?.age}
+                            value={formData.age}
                             onChange={handleInputChange}
                         />
                     </label>
@@ -88,7 +88,7 @@ const CreateForm = ({setActTabla}) => {
                             type="number"
                             name="number"
                             placeholder="Numero"
-                            value={formData?.number}
+                            value={formData.number}
                             onChange={handleInputChange}
                         />
                     </label>
